@@ -1,24 +1,43 @@
-module "cluster" {
-  source = "./modules/cluster"
-  host = var.host
-  user = var.user
-  private_key_path = var.private_key_path
+provider "helm" {
+  alias = "root_helm"
+  kubernetes = {
+    config_path = "./kubeconfig"
+  }
 }
 
-module "zabbix" {
-  source    = "./modules/zabbix"
-  namespace = "monitoring"
+module "cluster" {
+  # Seu módulo cluster aqui
+}
+
+module "argo" {
+  source = "./modules/argo"
+  namespace = "argo"
+
+  providers = {
+    helm = helm.root_helm
+  }
+
   depends_on = [module.cluster]
 }
 
 module "grafana" {
-  source    = "./modules/grafana"
-  namespace = "monitoring"
+  source = "./modules/grafana"
+  namespace = "grafana"
+
+  providers = {
+    helm = helm.root_helm
+  }
+
   depends_on = [module.cluster]
 }
 
-module "argo" {
-  source    = "./modules/argo"
-  namespace = "monitoring"
+module "zabbix" {
+  source = "./modules/zabbix"
+  namespace = "zabbix"
+
+  providers = {
+    helm = helm.root_helm
+  }
+
   depends_on = [module.cluster]
 }

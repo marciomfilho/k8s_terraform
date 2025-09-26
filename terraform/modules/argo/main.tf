@@ -6,8 +6,10 @@ resource "helm_release" "argo" {
   version          = "5.43.4"
   create_namespace = true
 
-  set {
-    name  = "service.type"
-    value = "LoadBalancer"
-  }
+  set = [
+    {
+      name  = "service.type"
+      value = "LoadBalancer"
+    }
+  ]
 }

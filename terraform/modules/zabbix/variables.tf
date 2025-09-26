@@ -1,4 +1,4 @@
-variable "zabbix_namespace" {
+variable "namespace" {
   description = "Namespace para instalar Zabbix"
   type        = string
   default     = "zabbix"

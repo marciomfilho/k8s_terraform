@@ -1,4 +1,4 @@
-variable "grafana_namespace" {
+variable "namespace" {
   description = "Namespace para instalar Grafana"
   type        = string
   default     = "grafana"
