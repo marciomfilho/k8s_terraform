@@ -1,5 +1,5 @@
 variable "namespace" {
-  description = "Namespace Kubernetes para o módulo argo"
+  description = "Namespace para instalar Argo-CD"
   type        = string
-  default     = "monitoring"
+  default     = "argo"
 }
