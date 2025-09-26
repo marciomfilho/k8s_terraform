@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"argo","Source":"./modules/argo","Dir":"modules/argo"},{"Key":"cluster","Source":"./modules/cluster","Dir":"modules/cluster"},{"Key":"grafana","Source":"./modules/grafana","Dir":"modules/grafana"},{"Key":"zabbix","Source":"./modules/zabbix","Dir":"modules/zabbix"}]}
