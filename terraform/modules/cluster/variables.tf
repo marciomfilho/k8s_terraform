@@ -7,6 +7,7 @@ variable "host" {
 variable "user" {
   description = "Usuário SSH"
   type        = string
+  default     = "marcio"
 }
 
 variable "private_key_path" {
