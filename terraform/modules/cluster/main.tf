@@ -27,3 +27,21 @@ resource "null_resource" "setup_k8s_master" {
     ]
   }
 }
+
+resource "null_resource" "copy_kubeconfig" {
+  depends_on = [null_resource.setup_k8s_master]
+
+  provisioner "local-exec" {
+    command = "scp -o StrictHostKeyChecking=no -i ${var.private_key_path} ${var.user}@${var.host}:/home/${var.user}/.kube/config ./kubeconfig"
+  }
+}
+
+provider "kubernetes" {
+  config_path = "./kubeconfig"
+}
+
+provider "helm" {
+  kubernetes = {
+    config_path = "./kubeconfig"
+  }
+}
