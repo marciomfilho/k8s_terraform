@@ -3,7 +3,7 @@ resource "helm_release" "zabbix" {
   repository       = "https://zabbix-community.github.io/helm-zabbix"
   chart            = "helm-zabbix"
   namespace        = var.namespace
-  version          = "0.14.0"
+  version          = "7.0.12"
   create_namespace = true
 
   set = [
