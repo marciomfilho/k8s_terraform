@@ -3,7 +3,6 @@ resource "null_resource" "setup_k8s_master" {
     type        = "ssh"
     host        = var.host
     user        = var.user
-    private_key = file(var.private_key_path)
   }
 
   provisioner "remote-exec" {
