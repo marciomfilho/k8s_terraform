@@ -1,5 +1,5 @@
-variable "namespace" {
-  description = "Namespace Kubernetes para o módulo grafana"
+variable "grafana_namespace" {
+  description = "Namespace para instalar Grafana"
   type        = string
-  default     = "monitoring"
+  default     = "grafana"
 }

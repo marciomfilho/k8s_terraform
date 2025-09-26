@@ -1,5 +1,5 @@
-variable "namespace" {
-  description = "Namespace Kubernetes para o módulo zabbix"
+variable "zabbix_namespace" {
+  description = "Namespace para instalar Zabbix"
   type        = string
-  default     = "monitoring"
+  default     = "zabbix"
 }
