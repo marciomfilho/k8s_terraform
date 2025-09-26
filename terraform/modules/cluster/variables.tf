@@ -13,4 +13,5 @@ variable "user" {
 variable "private_key_path" {
   description = "Caminho local para chave SSH"
   type        = string
+  default     = "~/.ssh/id_rsa"
 }

@@ -9,7 +9,7 @@ module "cluster" {
   source          = "./modules/cluster"
   host            = "192.168.15.158"
   user            = "marcio"
-  private_key_path = "~/.ssh/id_rsa"
+  private_key_path = "/Users/marcio/.ssh/id_rsa"
 }
 
 module "argo" {

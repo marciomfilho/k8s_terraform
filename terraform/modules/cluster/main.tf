@@ -3,6 +3,7 @@ resource "null_resource" "setup_k8s_master" {
     type        = "ssh"
     host        = var.host
     user        = var.user
+    private_key = file(var.private_key_path)
   }
 
   provisioner "remote-exec" {
@@ -33,4 +34,4 @@ resource "null_resource" "copy_kubeconfig" {
   provisioner "local-exec" {
     command = "scp -o StrictHostKeyChecking=no -i ${var.private_key_path} ${var.user}@${var.host}:/home/${var.user}/.kube/config ./kubeconfig"
   }
-} 
+}
