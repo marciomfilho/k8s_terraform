@@ -34,4 +34,4 @@ resource "null_resource" "copy_kubeconfig" {
   provisioner "local-exec" {
     command = "scp -o StrictHostKeyChecking=no -i ${var.private_key_path} ${var.user}@${var.host}:/home/${var.user}/.kube/config ./kubeconfig"
   }
-}
+} 
