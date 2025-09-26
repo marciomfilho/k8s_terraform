@@ -33,14 +33,3 @@ module "grafana" {
 
   depends_on = [module.cluster]
 }
-
-module "zabbix" {
-  source = "./modules/zabbix"
-  namespace = "zabbix"
-
-  providers = {
-    helm = helm.root_helm
-  }
-
-  depends_on = [module.cluster]
-}
