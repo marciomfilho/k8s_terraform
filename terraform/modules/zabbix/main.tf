@@ -1,7 +1,7 @@
 resource "helm_release" "zabbix" {
   name             = "zabbix"
-  repository       = "https://zabbix-community.github.io/helm-zabbix"
-  chart            = "helm-zabbix"
+  repository       = "https://zabbix-community.github.io/zabbix"
+  chart            = "zabbix"
   namespace        = var.namespace
   version          = "7.0.12"
   create_namespace = true
