@@ -6,7 +6,7 @@ provider "helm" {
 }
 
 module "cluster" {
-  # Seu módulo cluster aqui
+  source = "./modules/cluster"
 }
 
 module "argo" {

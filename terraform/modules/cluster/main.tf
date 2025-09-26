@@ -35,13 +35,3 @@ resource "null_resource" "copy_kubeconfig" {
     command = "scp -o StrictHostKeyChecking=no -i ${var.private_key_path} ${var.user}@${var.host}:/home/${var.user}/.kube/config ./kubeconfig"
   }
 }
-
-provider "kubernetes" {
-  config_path = "./kubeconfig"
-}
-
-provider "helm" {
-  kubernetes = {
-    config_path = "./kubeconfig"
-  }
-}
